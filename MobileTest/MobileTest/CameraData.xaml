@@ -23,7 +23,7 @@
                                 <Label Text="{Binding Name}" Padding="5" FlexLayout.Basis="35%"/>
                                 <Label Text="{Binding IsSoundOn}" Padding="5" FlexLayout.Basis="20%"/>
                                 <Label Text="{Binding SecObjectInfoName}" Padding="5" FlexLayout.Basis="30%"/>
-                                <CheckBox IsChecked="{Binding DisplayFrame}"/>
+                                <local:FrameCheckBox IsChecked="{Binding DisplayFrame}"/>
                             </FlexLayout>
                         </ViewCell.View>
                     </ViewCell>
