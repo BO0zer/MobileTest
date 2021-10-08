@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MobileTest;assembly=MobileTest"
+             x:Class="MobileTest.CameraData"
+             Title="CameraData">
+    <StackLayout>
+        <Label Text="Список камер" HorizontalTextAlignment="Center" Padding="20" FontSize="Header"/>
+        <FlexLayout Direction="Row">
+            <Label Text="Name" Padding="5" FlexLayout.Basis="35%" FontSize="16"/>
+            <Label Text="IsSoundOn" Padding="5" FlexLayout.Basis="20%" FontSize="16"/>
+            <Label Text="SecObjectInfoName" Padding="5" FlexLayout.Basis="30%" FontSize="16"/>
+            <Label Text="CheckBox" Padding="5" FlexLayout.Basis="15%" FontSize="16"/>
+        </FlexLayout>
+        <ListView x:Name="camerasList"
+              HasUnevenRows="True"
+              ItemsSource="{Binding Cameras}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <FlexLayout Direction="Row">
+                                <Label Text="{Binding Name}" Padding="5" FlexLayout.Basis="35%"/>
+                                <Label Text="{Binding IsSoundOn}" Padding="5" FlexLayout.Basis="20%"/>
+                                <Label Text="{Binding SecObjectInfoName}" Padding="5" FlexLayout.Basis="30%"/>
+                                <CheckBox IsChecked="{Binding DisplayFrame}"/>
+                            </FlexLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
